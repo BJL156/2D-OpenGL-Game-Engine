@@ -17,8 +17,8 @@ namespace OGLE {
 	private:
 		// TODO: Game engine components
 		Window mWindow{800, 600, "OGLE App"};
-		InputHandler mInputHandler;
-		Renderer mRenderer;
+		InputHandler mInputHandler{mWindow};
+		Renderer mRenderer{mWindow};
 		Game mGame{mRenderer, mInputHandler};
 	};
 }

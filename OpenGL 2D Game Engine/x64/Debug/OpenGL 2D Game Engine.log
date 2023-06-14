@@ -1,2 +1,7 @@
-﻿  Renderer.cpp
+﻿  Game.cpp
+  Main.cpp
+  Engine.cpp
+  Entity.cpp
+  Renderer.cpp
+  Generating Code...
   OpenGL 2D Game Engine.vcxproj -> D:\Program Files\Programming\C++\Game Engine\OpenGL 2D Game Engine\x64\Debug\OpenGL 2D Game Engine.exe

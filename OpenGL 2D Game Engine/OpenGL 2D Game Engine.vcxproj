@@ -135,6 +135,7 @@
   <ItemGroup>
     <ClCompile Include="glad.c" />
     <ClCompile Include="source\engine\Engine.cpp" />
+    <ClCompile Include="source\engine\Entity.cpp" />
     <ClCompile Include="source\engine\InputHandler.cpp" />
     <ClCompile Include="source\engine\Renderer.cpp" />
     <ClCompile Include="source\engine\Shader.cpp" />
@@ -144,6 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\engine\Engine.hpp" />
+    <ClInclude Include="source\engine\Entity.hpp" />
     <ClInclude Include="source\engine\InputHandler.hpp" />
     <ClInclude Include="source\engine\InputCodes.hpp" />
     <ClInclude Include="source\engine\Renderer.hpp" />

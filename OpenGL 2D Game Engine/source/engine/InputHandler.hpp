@@ -6,21 +6,23 @@
 namespace OGLE {
 	class InputHandler {
 	public:
-		InputHandler();
+		InputHandler(Window& window);
 		~InputHandler();
 
-		bool initialize(Window& window);
+		bool initialize();
 
-		bool isKeyDown(Window& window, uint32_t inputCode);
-		bool isKeyPressed(Window& window, uint32_t inputCode);
+		bool isKeyDown(uint32_t inputCode);
+		bool isKeyPressed(uint32_t inputCode);
 
-		bool isMouseButtonDown(Window& window, uint32_t inputCode);
-		bool isMouseButtonPressed(Window& window, uint32_t inputCode);
+		bool isMouseButtonDown(uint32_t inputCode);
+		bool isMouseButtonPressed(uint32_t inputCode);
 
-		float getCursorX(Window& window);
-		float getCursorY(Window& window);
+		float getCursorX();
+		float getCursorY();
 	private:
 		bool mKeys[KEY_LAST];
 		bool mMouseButtons[MOUSE_BUTTON_LAST];
+
+		Window& mWindow;
 	};
 }

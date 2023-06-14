@@ -1,8 +1,11 @@
 #pragma once
 
+#include <GLM/glm.hpp>
+
 #include "ENGINE/Renderer.hpp"
 #include "ENGINE/InputHandler.hpp"
 #include "ENGINE/InputCodes.hpp"
+#include "ENGINE/Entity.hpp"
 
 class Game {
 public:

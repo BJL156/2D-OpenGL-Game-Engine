@@ -15,7 +15,7 @@ namespace OGLE {
 			return false;
 		}
 
-		if (!mInputHandler.initialize(mWindow)) {
+		if (!mInputHandler.initialize()) {
 			throw std::runtime_error("Failed to initialize a input system.");
 			return false;
 		}

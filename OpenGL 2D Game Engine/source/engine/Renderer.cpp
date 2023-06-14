@@ -1,7 +1,8 @@
 #include "Renderer.hpp"
 
 namespace OGLE {
-	Renderer::Renderer() {
+	Renderer::Renderer(Window& window)
+		: mWindow(window) {
 
 	}
 
@@ -57,12 +58,23 @@ namespace OGLE {
 		glDeleteBuffers(1, &mElementBufferObject);
 	}
 
-	void Renderer::render() {
-		render(mShader);
+	void Renderer::render(Entity& entity) {
+		render(entity, mShader);
 	}
 
-	void Renderer::render(Shader& shader) {
+	void Renderer::render(Entity& entity, Shader& shader) {
 		shader.use();
+
+		glm::mat4 model = glm::mat4(1.0f);
+		glm::mat4 view = glm::mat4(1.0f);
+		glm::mat4 projection = glm::ortho(0.0f, (float)mWindow.getWidth(), (float)mWindow.getHeight(), 0.0f);
+
+		model = glm::translate(model, glm::vec3(entity.pos, 0.0f));
+		model = glm::scale(model, glm::vec3(entity.scale, 0.0f));
+
+		shader.setMat4("model", model);
+		shader.setMat4("view", view);
+		shader.setMat4("projection", projection);
 
 		glBindVertexArray(mVertexArrayObject);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
